@@ -1,0 +1,24 @@
+#Change Log
+All notable changes to this project will be documented in this file.
+This project adheres to [Tecflare Corporation](http://www.tecflare.com/).
+Copyright (c) Tecflare Corporation All rights Reserved
+
+## [Unreleased][unreleased]
+### Changed
+- Improved Connection to database and Installer
+- Improved Security on Secure File Manager
+- Added new features to Secure File Manager
+
+## [0.0.1] - 9/1/15
+### Changed
+
+- Improved Updating System
+- Added Server http://tecflare.cu.cc/multisite-update-packages/multisite-1.1.zip
+- Added Administration Area
+- Cleaned Some Code located in admin/functions
+
+## [Unreleased][unreleased]
+### Changed
+
+-Improved Security
+-Added port plocking
