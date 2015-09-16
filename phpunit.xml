@@ -9,13 +9,13 @@
         >
     <testsuites>
         <testsuite name="First Tests">
-            <directory>/</directory>
+            <directory>test/</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>/</directory>
+            <directory>test/</directory>
         </whitelist>
     </filter>
 </phpunit>
