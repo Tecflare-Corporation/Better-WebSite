@@ -7,9 +7,6 @@ php:
   - hhvm
   - nightly
 
-matrix:
-  allow_failures:
-    - php: 7.0
     
     notifications:
   webhooks:
