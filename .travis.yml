@@ -1,5 +1,4 @@
     script:
-    - phpunit --configuration phpunit.xml --debug
     - sh test/basictest.sh
     notifications:
   webhooks:
