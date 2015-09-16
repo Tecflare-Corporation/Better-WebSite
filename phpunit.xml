@@ -6,17 +6,16 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          syntaxCheck="false"
-        
         >
     <testsuites>
         <testsuite name="First Tests">
-            <directory>./test/</directory>
+            <directory>/</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>./src/</directory>
+            <directory>/</directory>
         </whitelist>
     </filter>
 </phpunit>
