@@ -34,6 +34,7 @@ And of course Tecflare Multisite itself is open source on GitHub.
 Want to contribute? Great!
 
 
+[![Build Status](https://travis-ci.org/dodiaraculus17/mSite.svg?branch=master)](https://travis-ci.org/dodiaraculus17/mSite)
 
 
 
