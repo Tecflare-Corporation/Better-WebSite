@@ -75,14 +75,7 @@ elseif ($_GET["page"] == "aa")
   {
     die("System already installed");
   }
-<<<<<<< HEAD
-  if (!file_exists("../admin"))
-=======
-  if (!file_exists("../LICENCE") || !file_exists("../CHANGELOG") || !file_exists("../README.md"))
->>>>>>> 4d78b6bf80a069e9a6554e976a6de528ffe2d9d7
-  {
-    die("System has been tampered!");
-  }
+
     echo "System meets requirements.";
   
 echo '

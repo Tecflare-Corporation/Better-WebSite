@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include("functions/checkLogin.php");
 include("../config.php");
 include("functions/head.php");
@@ -18,7 +19,7 @@ include("functions/head.php");
         
 <?php
 $plugins = scandir("../plugins");
-foreach ($plugin as $file)
+foreach ($plugins as $file)
 {
     include("../plugins/" . $file);
     plugin_header();
