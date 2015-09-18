@@ -1,4 +1,6 @@
 <?php
+if (!isset($testmode))
+{
 error_reporting(0);
 include("../config.php");
 $key = md5("Irule17");
@@ -36,4 +38,5 @@ $conn = new mysqli($hostname, $usename, $password, $database);
 $conn->query($sql);
 $conn->close();
 header("Location: cloudfile.php");
+}
 ?>

@@ -1,4 +1,6 @@
 <?php
+if (!isset($testmode))
+{
 error_reporting(0);
 ?>
 <!DOCTYPE html>
@@ -200,3 +202,6 @@ elseif($_GET["page"] == 4 && file_exists("../config.php"))
     <script src="javascript/jquery.js"></script>
   </body>
 </html>
+<?php
+}
+?>

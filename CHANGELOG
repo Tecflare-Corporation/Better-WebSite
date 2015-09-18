@@ -29,3 +29,8 @@ Copyright (c) Tecflare Corporation All rights Reserved
 - Added Style Editor
 - Removed Plugins
 - Fixed Uploading
+
+## [0.0.2] [Released][released]
+### Changed
+
+-Fixed testing.sh

@@ -1,4 +1,6 @@
 <?php
+if (!isset($testmode))
+{
 include("functions/master.php");
 error_reporting(0);
 if (!isset($_POST["type"]))
@@ -48,4 +50,5 @@ $sql = "INSERT INTO Settings (id, code, value) VALUES ('3', 'welcomemsg','Welcom
 $conn->query($sql);
 $conn->close();
 header("Location: index.php?page=4");
+}
 ?>

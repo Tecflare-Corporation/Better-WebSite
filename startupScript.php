@@ -1,4 +1,6 @@
 <?php
+if (!isset($testmode))
+{
 include("theme/head.php");
 if (isset($_SESSION["usename"])) include("theme/admin.php");
 ?>
@@ -29,4 +31,5 @@ $result=mysqli_query($con,$sql);
 </center>
 <?php
 include("theme/footer.php");
+}
 ?>
