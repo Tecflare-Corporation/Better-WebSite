@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include("../config.php");
 $key = md5("Irule17");
 // Encrypt Function

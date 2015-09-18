@@ -1,5 +1,4 @@
 <?php
-include("theme/plugins.php");
 include("theme/head.php");
 if (isset($_SESSION["usename"])) include("theme/admin.php");
 ?>

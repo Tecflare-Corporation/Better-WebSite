@@ -22,3 +22,10 @@ Copyright (c) Tecflare Corporation All rights Reserved
 
 -Improved Security
 -Added port plocking
+
+## [0.0.2] - 9/18/15
+### Changed
+
+- Added Style Editor
+- Removed Plugins
+- Fixed Uploading
