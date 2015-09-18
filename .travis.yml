@@ -1,3 +1,6 @@
+   before_script:
+   - apt-get update
+   - apt-get install php5
     script:
     - sh test/basictest.sh
     notifications:
