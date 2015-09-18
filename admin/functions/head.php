@@ -90,6 +90,7 @@
               <li><a href="cloudfile.php">Storage</a></li>
               <li><a href="ipblock.php">Firewall</a></li>
               <li><a href="bkup.php">Backup</a></li>
+              <li><a href="link.php">Link Tecflare</a></li>
               <li><a href="account.php">My Account</a></li>
             
             </ul>
