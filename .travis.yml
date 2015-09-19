@@ -1,5 +1,5 @@
 script:
-    -sh test/test.sh
+    - sh test/test.sh
     notifications:
   webhooks:
     urls:
