@@ -1,8 +1,8 @@
 <?php
 if (!isset($testmode))
 {
+ error_reporting(0);
 include("functions/master.php");
-error_reporting(0);
 if (!isset($_POST["type"]))
 {
 include("functions/import.php");
@@ -50,5 +50,7 @@ $sql = "INSERT INTO Settings (id, code, value) VALUES ('3', 'welcomemsg','Welcom
 $conn->query($sql);
 $conn->close();
 header("Location: index.php?page=4");
+} else {
+ 
 }
 ?>

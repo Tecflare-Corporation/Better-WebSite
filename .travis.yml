@@ -1,8 +1,6 @@
-   before_script:
-   - apt-get update
-   - apt-get install php5
+   before_script: apt-get install php5
     script:
-    - sh test/basictest.sh
+    - sh test/test.sh
     notifications:
   webhooks:
     urls:

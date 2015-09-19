@@ -1,8 +1,10 @@
 <?php
+$neededpartner = true;
 if (!isset($testmode))
 {
 error_reporting(0);
 ?>
+session_start();
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,6 +36,43 @@ error_reporting(0);
   </div><!-- /.container-fluid -->
 </nav>
 <?php
+if ($neededpartner) {
+    if (!isset($_SESSION["nonpartner"]))
+    {
+        ?>
+         <ol class="breadcrumb">
+  <li>Installer</li>
+  <li>Step Partners Only</li>
+</ol>
+<div class="page-header">
+  <h1>Step 0 <small>Partners Only</small></h1>
+</div>
+<div class="container">
+    <p>
+        <?php
+        if ($_GET["error"] == "aq")
+{
+  ?>
+ <div class="alert alert-danger" role="alert">
+  <strong>Error!</strong> Partner id not correct.
+</div>
+<?php
+}
+?>
+        Please enter your partner id.
+    </p>
+    <form method="POST" action="chk.php">
+     <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">ID:</span>
+
+  <input type="text" name="partner" class="form-control" placeholder="admin" required="true" aria-describedby="basic-addon1">
+</div>
+<input type="submit" class="btn btn-info" value="Next" role="button">
+</form>
+        <?php
+        die();
+    }
+}
 if ($_GET["page"] == 1)
 {
   ?>
