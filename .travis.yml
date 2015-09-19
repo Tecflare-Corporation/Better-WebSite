@@ -1,5 +1,4 @@
-
-    script:
+script:
     - sh test/test.sh
     notifications:
   webhooks:
