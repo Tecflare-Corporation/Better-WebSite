@@ -1,4 +1,5 @@
 echo Tecflare Multisite System Testing
+sudo apt-get install php5
 cd test
 echo Testing PHP
 php -f  test.php
