@@ -1,7 +1,7 @@
 script:
     - sh test/test.sh
 language: php
-sudo: false
+sudo: true
 php:
   - 5.4
   - 5.5
