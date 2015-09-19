@@ -5,7 +5,7 @@ echo Testing PHP
 php -f  test.php
   if [ $? != 0 ]; then
      echo "...Error";
-     exit 2;
+     exit;
   fi
 
 echo ...Success
