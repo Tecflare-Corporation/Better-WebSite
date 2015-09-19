@@ -1,4 +1,4 @@
-   before_script: apt-get install php5
+sudo: true
     script:
     - sh test/test.sh
     notifications:
