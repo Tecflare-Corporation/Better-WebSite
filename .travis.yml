@@ -1,4 +1,4 @@
-sudo: true
+
     script:
     - sh test/test.sh
     notifications:
