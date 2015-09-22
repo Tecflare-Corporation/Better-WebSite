@@ -37,6 +37,25 @@ $result=mysqli_query($con,$sql);
     Administrators
   </li>
 </ul>
+   <div class="  well well-sm"><ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge"><?php
+    $count = 0;
+$con=mysqli_connect($hostname,$usename, $password, $database);
+$sql="SELECT * FROM Posts";
+$result=mysqli_query($con,$sql);
+ while ($row=mysqli_fetch_row($result))
+    {
+     $count = $count + 1;
+    }
+   mysqli_free_result($result);
+    mysqli_close($con);
+    echo $count;
+    ?>
+    </span>
+ Posts
+  </li>
+</ul>
 <div class="  well well-sm"><ul class="list-group">
   <li class="list-group-item">
     <span class="badge">
