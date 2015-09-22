@@ -11,7 +11,8 @@ Website:http://tecflare-corporation.github.io/mSite
   - Secure
   - Magic
 
-
+###Important
+The Partner id to use this script is Techcodingluv
 
 >Easy to use and Requires Minimal Knowledge.
 
