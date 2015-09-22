@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include("functions/checkLogin.php");
 include("../config.php");
 if (isset($_GET["error"]))
@@ -37,19 +38,19 @@ $result=mysqli_query($con,$sql);
   <span class="input-group-addon" id="basic-addon1">Lock Site</span>
   <input type="hidden" name="mmode" value="0" />
   <input type="checkbox" name="mmode" class="form-control" aria-describedby="basic-addon1" ' . $fami . '>
-</div>';
+</div><br>';
     } else {
          echo ' <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">' . $nami . '</span>
   <input type="text" name="' .$row[1] . '" class="form-control" value='.$row[2].' required="true" aria-describedby="basic-addon1">
-</div>';
+</div><br>';
     }
     }
     mysqli_free_result($result);
     mysqli_close($con);
 ?>
 
-
+<br>
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Welcome Message</span>
     <textarea name="content" style="width:100%">

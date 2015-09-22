@@ -2,9 +2,9 @@
 $neededpartner = true;
 if (!isset($testmode))
 {
+    session_start();
 error_reporting(0);
 ?>
-session_start();
 <!DOCTYPE html>
 <html lang="en">
   <head>

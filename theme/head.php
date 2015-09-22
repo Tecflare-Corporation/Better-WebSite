@@ -39,7 +39,11 @@ $result=mysqli_query($con,$sql);
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-  
+  <li><a href="index.php">Home</a></li>
+      </ul>
+       <ul class="nav navbar-right">
+  <li> <a href="blog.php" class="btn btn-danger" role="button">Blog</a>
+  </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

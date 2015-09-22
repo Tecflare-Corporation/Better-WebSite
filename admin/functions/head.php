@@ -21,6 +21,15 @@
   <script src="syn/addon/fold/comment-fold.js"></script>
   <script src="syn/mode/javascript/javascript.js"></script>
   <script src="syn/mode/xml/xml.js"></script>
+  <?php 
+  if (!isset($nowdisable))
+  {
+    ?>
+  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script>tinymce.init({selector:'textarea'});</script>
+<?php
+}
+?>
   <script src="syn/mode/markdown/markdown.js"></script>
   <style type="text/css">
     .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
@@ -91,6 +100,7 @@
               <li><a href="ipblock.php">Firewall</a></li>
               <li><a href="bkup.php">Backup</a></li>
               <li><a href="link.php">Link Tecflare</a></li>
+              <li><a href="post.php">Blog</a></li>
               <li><a href="account.php">My Account</a></li>
             
             </ul>

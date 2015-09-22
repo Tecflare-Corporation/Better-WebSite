@@ -40,6 +40,13 @@ blocked VARCHAR(99999),
 value TEXT
 )";
 $conn->query($sql);
+ $sql = "CREATE TABLE Posts (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+name VARCHAR(99999),
+author VARCHAR(99999),
+value TEXT
+)";
+$conn->query($sql);
 $sql = "INSERT INTO Administrators (id, usename, password) VALUES ('1', '" . $conn->real_escape_string(addslashes($_POST["usename"]))."', '" .md5($conn->real_escape_string($_POST["password"]))."')";
 $conn->query($sql);
 $sql = "INSERT INTO Settings (id, code, value) VALUES ('1', 'title','Multisite Central')";
