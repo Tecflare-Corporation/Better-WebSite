@@ -1,15 +1,7 @@
-   before_script: apt-get install php5
-    script:
+script:
     - sh test/test.sh
-    notifications:
-  webhooks:
-    urls:
-   -https://webhooks.gitter.im/e/69e9e62eb25dbbdaf748
-    on_success: change  # options: [always|never|change] default: always
-    on_failure: always  # options: [always|never|change] default: always
-    on_start: never     # options: [always|never|change] default: always
 language: php
-sudo: false
+sudo: true
 php:
   - 5.4
   - 5.5
