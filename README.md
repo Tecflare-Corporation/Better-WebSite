@@ -11,7 +11,7 @@ Website:http://tecflare-corporation.github.io/mSite
 
 Preview Frontend:http://mymultisite.x10.mx/
 
-Preview Backend:http://mymultisite.x10.mx/
+Preview Backend:http://mymultisite.x10.mx/admin/
 
 - Username: test
 - Password: test
