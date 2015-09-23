@@ -1,5 +1,5 @@
 <?php
-include("functions/checkLogin.php");
+//include("functions/checkLogin.php");
 include("../config.php");
 include("functions/head.php");
 ?>
@@ -9,15 +9,28 @@ include("functions/head.php");
 
 <?php
 $doit = 0;
+$serverone = "http://www.tecflare.cu.cc/";
+$servertwo = "http://www.tecflare.com/";
+$dserver = "";
 ini_set('max_execution_time',60);
- 
-
-
-$getVersions = file_get_contents('http://www.tecflare.cu.cc/multisite-update-packages/current-release-versions.php') or die ('ERROR');
+$getVersions = file_get_contents($serverone . 'multisite-update-packages/current-release-versions.php');
+$dserver = $serverone;
+if ($getVersions == "")
+{
+    echo ("Cannot Communicate with Server " . $serverone . "<br>");
+    $getVersions = file_get_contents($servertwo . 'multisite-update-packages/current-release-versions.php');
+    $dserver = $servertwo;
+if ($getVersions == "")
+{
+    die("Cannot Communicate with Server " . $servertwo . "<br>");
+}
+}
 if ($getVersions != '')
 {
     //If we managed to access that file, then lets break up those release versions into an array.
+
     echo '<div class="alert alert-info"><p>CURRENT VERSION: '.$version.'</p>';
+    echo 'Server is '. $dserver . '<br>';
     echo '<p>Reading Current Releases List</p>';
     $versionList = explode("n", $getVersions);    
     foreach ($versionList as $aV)
@@ -29,7 +42,7 @@ if ($getVersions != '')
             //Download The File If We Do Not Have It
             if ( !is_file(  '../tmp/multisite-'.$aV.'.zip' )) {
                 echo '<p>Downloading New Update</p>';
-                $newUpdate = file_get_contents('http://www.tecflare.cu.cc/multisite-update-packages/multisite-'.$aV.'.zip');
+                $newUpdate = file_get_contents($dserver .'multisite-update-packages/multisite-'.$aV.'.zip');
                 if ( !is_dir( '../tmp/' ) ) mkdir ( '../tmp/' );
                 $dlHandler = fopen('../tmp/multisite-'.$aV.'.zip', 'w');
                 if ( !fwrite($dlHandler, $newUpdate) ) { echo '<p><div class="alert alert-danger">Could not save new update. Operation aborted.</div></p>'; exit(); }

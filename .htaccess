@@ -1,0 +1,2 @@
+ErrorDocument 404 /read.php?error=404
+ErrorDocument 403 /read.php?error=403
