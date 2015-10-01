@@ -6,6 +6,17 @@
 Tecflare Multisite is a professional webpage system like wordpress.
 
 Website:http://tecflare-corporation.github.io/mSite
+
+###Testing 
+
+Preview Frontend:http://mymultisite.x10.mx/
+
+Preview Backend:http://mymultisite.x10.mx/admin/
+
+- Username: test
+- Password: test
+###Using
+
   - Easy
   - Simple
   - Secure
