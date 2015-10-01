@@ -96,6 +96,7 @@
               <li><a href="settings.php">System Settings</a></li>
               <li><a href="update.php">Update</a></li>
               <!--<li><a href="plugins.php">Plugins</a></li>-->
+              <li><a href="store.php">Store</a></li>
               <li><a href="cloudfile.php">Storage</a></li>
               <li><a href="ipblock.php">Firewall</a></li>
               <li><a href="bkup.php">Backup</a></li>

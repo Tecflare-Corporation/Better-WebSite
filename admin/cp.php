@@ -23,6 +23,26 @@ $result=mysqli_query($con,$sql);
     <span class="badge"><?php
     $count = 0;
 $con=mysqli_connect($hostname,$usename, $password, $database);
+$sql="SELECT * FROM Items";
+$result=mysqli_query($con,$sql);
+ while ($row=mysqli_fetch_row($result))
+    {
+     $count = $count + 1;
+    }
+   mysqli_free_result($result);
+    mysqli_close($con);
+    echo $count;
+    ?>
+    </span>
+    Products
+  </li>
+</ul>
+</div>
+    <div class="  well well-sm"><ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge"><?php
+    $count = 0;
+$con=mysqli_connect($hostname,$usename, $password, $database);
 $sql="SELECT id,usename,password FROM Administrators";
 $result=mysqli_query($con,$sql);
  while ($row=mysqli_fetch_row($result))
@@ -36,7 +56,7 @@ $result=mysqli_query($con,$sql);
     </span>
     Administrators
   </li>
-</ul>
+</ul></div>
    <div class="  well well-sm"><ul class="list-group">
   <li class="list-group-item">
     <span class="badge"><?php
@@ -56,6 +76,7 @@ $result=mysqli_query($con,$sql);
  Posts
   </li>
 </ul>
+</div>
 <div class="  well well-sm"><ul class="list-group">
   <li class="list-group-item">
     <span class="badge">
@@ -63,6 +84,7 @@ $result=mysqli_query($con,$sql);
      </span>
      System Version
 </li></ul></div>
+
 <?php
 include("functions/footer.php");
 ?>

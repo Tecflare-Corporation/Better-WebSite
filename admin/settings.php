@@ -42,7 +42,7 @@ $result=mysqli_query($con,$sql);
     } else {
          echo ' <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">' . $nami . '</span>
-  <input type="text" name="' .$row[1] . '" class="form-control" value='.$row[2].' required="true" aria-describedby="basic-addon1">
+  <input type="text" name="' .$row[1] . '" class="form-control" value='.$row[2].'>
 </div><br>';
     }
     }
