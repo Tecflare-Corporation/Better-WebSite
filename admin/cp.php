@@ -6,7 +6,7 @@ include("functions/head.php");
 <div class="page-header">
 <h1>Dashboard</h1>
 </div>
-
+<div class="row">
 <?php
 $con=mysqli_connect($hostname,$usename, $password, $database);
 $sql="SELECT id,code,value FROM Settings";
@@ -18,9 +18,9 @@ $result=mysqli_query($con,$sql);
    mysqli_free_result($result);
     mysqli_close($con);
     ?>
-    <div class="  well well-sm"><ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge"><?php
+     <div class="col-sm-4" style="background-color:darkorange;">
+      <div class="tile red">
+        <h4 class="title"> <?php
     $count = 0;
 $con=mysqli_connect($hostname,$usename, $password, $database);
 $sql="SELECT * FROM Items";
@@ -32,15 +32,13 @@ $result=mysqli_query($con,$sql);
    mysqli_free_result($result);
     mysqli_close($con);
     echo $count;
-    ?>
-    </span>
-    Products
-  </li>
-</ul>
-</div>
-    <div class="  well well-sm"><ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge"><?php
+    ?> Products</h4>
+     
+   </div>
+    </div>
+    <div class="col-sm-4" style="background-color:darkgreen;">
+      <div class="tile orange">
+        <h4 class="title"><?php
     $count = 0;
 $con=mysqli_connect($hostname,$usename, $password, $database);
 $sql="SELECT id,usename,password FROM Administrators";
@@ -52,14 +50,13 @@ $result=mysqli_query($con,$sql);
    mysqli_free_result($result);
     mysqli_close($con);
     echo $count;
-    ?>
-    </span>
-    Administrators
-  </li>
-</ul></div>
-   <div class="  well well-sm"><ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge"><?php
+    ?> Administrators</h4>
+        
+    </div>
+    </div>
+   <div class="col-sm-4" style="background-color:darkorange;">
+      <div class="tile red">
+        <h4 class="title"><?php
     $count = 0;
 $con=mysqli_connect($hostname,$usename, $password, $database);
 $sql="SELECT * FROM Posts";
@@ -71,20 +68,17 @@ $result=mysqli_query($con,$sql);
    mysqli_free_result($result);
     mysqli_close($con);
     echo $count;
-    ?>
-    </span>
- Posts
-  </li>
-</ul>
+    ?> Posts</h4>
+        
+   </div>
+   </div>
+  <div class="col-sm-4" style="background-color:darkblue;">
+      <div class="tile purple">
+        <h4 class="title">Version <?php echo $version; ?></h4>
+        
+   </div>
 </div>
-<div class="  well well-sm"><ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge">
-     <?php echo $version; ?>
-     </span>
-     System Version
-</li></ul></div>
-
+</div>
 <?php
 include("functions/footer.php");
 ?>

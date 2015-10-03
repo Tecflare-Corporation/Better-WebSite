@@ -63,6 +63,9 @@ $conn->query($sql);
 $sql = "INSERT INTO Settings (id, code, value) VALUES ('3', 'welcomemsg','Welcome to Multisite')";
 $conn->query($sql);
 $conn->close();
+$licence_key = rand(10000,99999) ."-" . rand(10000,99999) ."-" . rand(10000,99999) ."-" . rand(10000,99999) ."-" . rand(10000,99999);
+$test = file_get_contents("http://www.tecflare.com/multisite/?cmd=add&serial=" . $licence_key);
+file_put_contents("../licence",$licence_key);
 header("Location: index.php?page=4");
 } else {
  

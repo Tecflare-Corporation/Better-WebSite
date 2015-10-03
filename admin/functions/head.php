@@ -1,4 +1,15 @@
-<?php error_reporting(0); ?>
+<?php error_reporting(0);
+function checkpro() {
+  $file = file_get_contents("http://www.tecflare.com/multisite/" . file_get_contents("../licence"));
+  if ($file == 0 || $file == 1) {} else {die("Licence Could not be Validated");}
+    if ($file == "0") {
+      return true;
+    } else {
+      return true;
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tecflare Multisite</title>
     <link href="style/bootstrap.min.css" rel="stylesheet">
-    <link href="style/bootstrap.theme.css" rel="stylesheet">
+  <link href="style/bootstrap.theme.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <link rel="stylesheet" href="syn/lib/codemirror.css">
@@ -32,6 +43,7 @@
 ?>
   <script src="syn/mode/markdown/markdown.js"></script>
   <style type="text/css">
+
     .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
 
 
@@ -94,16 +106,41 @@
             <ul class="nav">
               <li class="active"><a href="cp.php">Dashboard</a></li>
               <li><a href="settings.php">System Settings</a></li>
+              <?php
+              if (checkpro() == true)
+              {
+              ?>
               <li><a href="update.php">Update</a></li>
+              <?php
+              }
+              ?>
               <!--<li><a href="plugins.php">Plugins</a></li>-->
               <li><a href="store.php">Store</a></li>
               <li><a href="cloudfile.php">Storage</a></li>
+              <?php
+              if (checkpro() == true)
+              {
+              ?>
               <li><a href="ipblock.php">Firewall</a></li>
+              <?php
+              }
+              ?>
+               
               <li><a href="bkup.php">Backup</a></li>
               <li><a href="link.php">Link Tecflare</a></li>
               <li><a href="post.php">Blog</a></li>
               <li><a href="account.php">My Account</a></li>
+              
+               <?php
+              if (checkpro() == false)
+              {
+              ?>
+              <li><a href="http://www.tecflare.com/multisite/pay.php?licence=<?php echo file_get_contents("../licence"); ?>"><B>Upgrade to Pro</B></a></li>
+              <?php
+              }
+              ?>
             
             </ul>
         </div>
         <div class="col-xs-12 col-sm-9">
+      
