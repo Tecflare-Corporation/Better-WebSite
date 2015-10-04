@@ -6,7 +6,6 @@ include("theme/head.php");
 if (isset($_SESSION["usename"])) include("theme/admin.php");
 ?>
 <h1>Blog</h1><br>
-  Search: <form method="POST" action="search.php"><input type="text" name="search"><input type="submit" value="Search"></form>
 
 <center> <div class="table-responsive">          
   <table class="table">

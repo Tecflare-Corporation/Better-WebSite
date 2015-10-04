@@ -37,7 +37,7 @@ $conn->query($sql);
 
 mysqli_close($con);
 }
-  
+  header("Location: ?error=onedone");
 
   die();
 }
@@ -123,6 +123,11 @@ if (isset($_GET["addtocart"]))
 if (isset($_GET["error"]) && $_GET["error"] == "addtocartpassed")
 {
     echo '<div class="alert alert-success" role="alert">Product has been added to cart</div>
+   ';
+}
+if (isset($_GET["error"]) && $_GET["error"] == "onedone")
+{
+    echo '<div class="alert alert-success" role="alert">Thank you for your purchase.</div>
    ';
 }
 ?>

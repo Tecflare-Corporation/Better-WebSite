@@ -2,7 +2,7 @@
 if (!isset($testmode))
 {
 include("theme/head.php");
-echo '  Search: <form method="POST" action="search.php"><input type="text" name="search"><input type="submit" value="Search"></form>';
+echo '';
 if (isset($_SESSION["usename"])) include("theme/admin.php");
 include("config.php");
  $conn = mysqli_connect($hostname, $usename, $password, $database);
