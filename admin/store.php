@@ -43,6 +43,41 @@ if ($result=mysqli_query($con,$sql))
 mysqli_close($con);
 ?>
     </tbody>
+  </table
+   <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Email</th>
+        <th>Products</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+$con=mysqli_connect($hostname,$usename,$password,$database);
+$sql="SELECT * FROM Orders";
+
+if ($result=mysqli_query($con,$sql))
+  {
+  // Fetch one and one row
+  while ($row=mysqli_fetch_row($result))
+    {
+    echo '
+          <tr>
+        <td>' .$row[0] . '</td>
+        <td>' . $row[1] . '</td>
+        <td>' . $row[2] . '</td>
+      </tr>
+    ';
+    }
+  // Free result set
+  mysqli_free_result($result);
+}
+
+mysqli_close($con);
+?>
+    </tbody>
   </table>
 <?php
 } else {

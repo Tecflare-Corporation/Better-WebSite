@@ -78,6 +78,24 @@ $result=mysqli_query($con,$sql);
         
    </div>
 </div>
+ <div class="col-sm-4" style="background-color:darkred;">
+      <div class="tile purple">
+        <h4 class="title"><?php
+    $count = 0;
+$con=mysqli_connect($hostname,$usename, $password, $database);
+$sql="SELECT * FROM Orders";
+$result=mysqli_query($con,$sql);
+ while ($row=mysqli_fetch_row($result))
+    {
+     $count = $count + 1;
+    }
+   mysqli_free_result($result);
+    mysqli_close($con);
+    echo $count;
+    ?> Orders</h4>
+        
+   </div>
+</div>
 </div>
 <?php
 include("functions/footer.php");
