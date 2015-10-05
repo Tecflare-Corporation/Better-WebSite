@@ -16,7 +16,7 @@ $hostname = "' . $mysqli->real_escape_string($_POST["hostname"]).'";
 $usename = "' . $mysqli->real_escape_string($_POST["usename"]).'";
 $password = "' . $mysqli->real_escape_string($_POST["password"]).'";
 $database = "' . $mysqli->real_escape_string($_POST["database"]).'";
-$version = "3";
+$version = "4";
 ?>
 ';
 file_put_contents("../config.php",$content);

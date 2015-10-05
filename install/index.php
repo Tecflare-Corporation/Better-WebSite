@@ -85,9 +85,9 @@ if ($_GET["page"] == 1)
 </div>
 <div class="container">
     <p>
-    Welcome to the beta Multisite script. This script will allow you to create an awesome multiwebsite. This script will allow you to be able to have multiple website like Google Images, Google Mail, and etc.
-    </p>
+    Welcome to the new Multisite. Multisite 4 is the latest version. It comes with new unique features. Multisite has also changed the style because there were some issues. Press next to experience the new multisite interface and website system.
 
+</p>
     <a href="index.php?page=aa" class="btn btn-info" role="button">Next</a>
     </div>
 </div>
