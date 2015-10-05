@@ -15,7 +15,18 @@ include("checkblk.php");
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title><?php
+$con=mysqli_connect($hostname,$usename, $password, $database);
+$sql="SELECT id,code,value FROM Settings";
+$result=mysqli_query($con,$sql);
+ while ($row=mysqli_fetch_row($result))
+    {
+     if ($row[0] == 1) echo $row[2];
+     if ($row[0] == 2 && $row[2] == "on") $err = "yes";
+    }
+   mysqli_free_result($result);
+    mysqli_close($con);
+    ?></title>
     <link href="admin/style/bootstrap.min.css" rel="stylesheet">
     <link href="admin/style/bootstrapsite.theme.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
