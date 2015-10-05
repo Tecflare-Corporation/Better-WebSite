@@ -109,7 +109,8 @@ echo money_format('$%i',$pricetag) . "<br>";
 ?></a>
 
   <?php
-  die();
+  include("theme/footer.php");
+die();
 }
 if (isset($_GET["clean"])) {
     $_SESSION["cart"] = array();
@@ -200,4 +201,5 @@ echo money_format('$%i',$pricetag) . "<br>";
 <a href="?pay&price=<?php echo urldecode($pricetag); ?> ">Pay <?php echo money_format('$%i',$pricetag); ?></a>
 <?php
 }
+include("theme/footer.php");
 ?>

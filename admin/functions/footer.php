@@ -1,5 +1,9 @@
     </div>
-
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">Copyright &copy; Tecflare All rights Reserved</p>
+  </div>
+</footer>
     <script src="javascript/bootstrap.min.js"></script>
     <script src="javascript/jquery.js"></script>
   <script>

@@ -46,7 +46,13 @@ function checkpro() {
 
     .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 60px;
 
+}
 /* Loosely based on the Midnight Textmate theme */
 
 .cm-s-night.CodeMirror { background: #0a001f; color: #f8f8f8; }
