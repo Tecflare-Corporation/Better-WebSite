@@ -30,7 +30,7 @@ The Partner id to use this script is Techcodingluv
 
 ### Version
 ```
-3.0.2 [Technical Preview]
+4.0.5 [Technical Preview]
 ```
 
 ### Tech

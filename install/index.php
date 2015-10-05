@@ -1,5 +1,5 @@
 <?php
-$neededpartner = true;
+$neededpartner = false;
 if (!isset($testmode))
 {
     session_start();
