@@ -1,7 +1,13 @@
 <?php
+if (!file_exists("config.php"))
+{
+header("Location: install/");
+die();
+}
 session_start();
 error_reporting(0);
 include("config.php");
+include("checkblk.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
