@@ -1,12 +1,13 @@
 <?php error_reporting(0);
 function checkpro() {
-  $file = file_get_contents("http://www.tecflare.com/multisite/" . file_get_contents("../licence"));
-  if ($file == 0 || $file == 1) {} else {die("Licence Could not be Validated");}
-    if ($file == "0") {
-      return true;
-    } else {
-      return true;
-    }
+  //$file = file_get_contents("http://www.tecflare.com/multisite/" . file_get_contents("../licence"));
+  //if ($file == 0 || $file == 1) {} else {die("Licence Could not be Validated");}
+    //if ($file == "0") {
+      //return true;
+    //} else {
+      //return true;
+    //}
+    return true;
 }
 
 ?>
@@ -120,7 +121,7 @@ function checkpro() {
               <?php
               }
               ?>
-              <!--<li><a href="plugins.php">Plugins</a></li>-->
+              <li><a href="api.php">API</a></li>
               <li><a href="store.php">Store</a></li>
               <li><a href="cloudfile.php">Storage</a></li>
               <?php
