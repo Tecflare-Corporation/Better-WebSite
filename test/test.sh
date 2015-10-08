@@ -1,6 +1,6 @@
-echo Tecflare Multisite System Testing
-sudo apt-get update
-sudo apt-get install php5
+echo Install PHP and Updating...
+sudo apt-get -qq update
+sudo apt-get -qq install php5
 cd test
 echo Testing PHP Please Wait
 OUTPUT="$(find ../ -iname "*.php" -exec php -l {} \; )";
@@ -16,5 +16,5 @@ myfunc() {
     }
     myfunc 'Error' $OUTPUT
     
-    echo "System Passed"
+    echo "Success Command Completed Successfully."
     exit 0;
