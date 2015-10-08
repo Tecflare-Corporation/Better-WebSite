@@ -1,5 +1,5 @@
-<?php
-class Blog {
+<?php 
+class Blog { 
 function add_post($name,$value,$author) {
     include("../config.php");
        $conn = new mysqli($hostname, $usename, $password, $database);

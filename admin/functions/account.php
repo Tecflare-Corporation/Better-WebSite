@@ -10,6 +10,6 @@ mysqli_close($con);
 header("Location: account.php?error=1");
 }
 else {
-header("Location: account.php?error=2")
+header("Location: account.php?error=2");
 }
 ?>
