@@ -30,6 +30,7 @@ $result=mysqli_query($con,$sql);
  while ($row=mysqli_fetch_row($result))
     {
     if ($row[1] == "title") $nami="Site Title";
+    if ($row[1] == "mail") $nami="Email";
     if ($row[1] == "theme") $nami="Site Theme";
     if ($row[1] == "maintainanceMode") 
     {

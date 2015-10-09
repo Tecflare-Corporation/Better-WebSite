@@ -68,6 +68,26 @@ $result=mysqli_query($con,$sql);
   <li><a href="index.php">Home</a></li>
   <li> <a href="store.php"  role="button">Store</a></li>
   <li> <a href="blog.php" role="button">Blog</a></li>
+   <?php
+$con=mysqli_connect($hostname,$usename,$password,$database);
+$sql="SELECT * FROM Pages";
+
+if ($result=mysqli_query($con,$sql))
+  {
+  // Fetch one and one row
+  while ($row=mysqli_fetch_row($result))
+    {
+    echo '
+<li><a href="pack.php?idt=' . $row[1] . '">' . $row[1] . '</a></li>
+    ';
+    }
+  // Free result set
+  mysqli_free_result($result);
+}
+
+mysqli_close($con);
+?> 
+
       </ul>
        <form class="navbar-form navbar-right" role="search" method="POST" action="search.php">
   <div class="form-group">

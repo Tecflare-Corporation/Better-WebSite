@@ -9,22 +9,20 @@ if (!isset($_GET["n"]))
 {
   ?>
 <div class="page-header">
-<h1>Blog</h1>
+<h1>Pages</h1>
 </div>
-<a href="?n=1" class="btn btn-info" role="button">Add Post</a>
+<a href="?n=1" class="btn btn-info" role="button">Add Page</a>
   <div class="table-responsive">          
   <table class="table">
     <thead>
       <tr>
-        <th>Actions</th>
         <th>Name</th>
-        <th>Author</th>
       </tr>
     </thead>
     <tbody>
            <?php
 $con=mysqli_connect($hostname,$usename,$password,$database);
-$sql="SELECT * FROM Posts";
+$sql="SELECT * FROM Pages";
 
 if ($result=mysqli_query($con,$sql))
   {
@@ -33,9 +31,7 @@ if ($result=mysqli_query($con,$sql))
     {
     echo '
           <tr>
-        <td></td>
         <td>' . $row[1] . '<td>
-        <td>' . $row[2] . '<td>
       </tr>
     ';
     }
@@ -54,9 +50,9 @@ mysqli_close($con);
 else {
   ?>
   <div class="page-header">
-<h1>Add Post</h1>
+<h1>Add Page</h1>
 </div>
- <form method="POST" action="build.php">
+ <form method="POST" action="buildnew.php">
     <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Name</span>
   <input type="text" name="name" class="form-control" placeholder="test" aria-describedby="basic-addon1">

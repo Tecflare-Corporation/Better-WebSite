@@ -44,7 +44,7 @@ Copyright (c) Tecflare Corporation All rights Reserved
 -Added Server http://www.tecflare.com/multisite-update-packages/multisite-3.zip
 -Added Error Pages
 
-## [0.0.4] [Preview] [Unreleased]
+## [0.0.4] [Preview] [released]
 ### Changed
 
 -Added Store
@@ -54,3 +54,9 @@ Copyright (c) Tecflare Corporation All rights Reserved
 -Nonpartners allowed
 -Added Support for footer
 -Added API
+
+## [0.0.5] [Preview] [Unreleased]
+### Changed
+
+-Added Pages
+-Changed Login Screen

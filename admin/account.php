@@ -1,4 +1,4 @@
-<?php
+<?php 
 include("functions/checkLogin.php");
 include("../config.php");
 include("functions/head.php");
@@ -12,7 +12,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 1)
  ?>
  <div class="alert alert-success" role="alert">Account Updated Successfully.</div>
  <?php
-}
+} 
 ?>
 <?php
 if (isset($_GET["error"]) && $_GET["error"] == 2)
