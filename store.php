@@ -13,7 +13,45 @@ session_start();
 if (isset($_GET["nowcharged"]))
 {
   
- // Do charging Here
+ require_once('stripe/init.php');
+try{
+$con=mysqli_connect($hostname,$usename, $password, $database);
+$sql="SELECT id,code,value FROM Settings";
+$result=mysqli_query($con,$sql);
+ while ($row=mysqli_fetch_row($result))
+    {
+     if ($row[0] == 5) $val = $row[2];
+    }
+   mysqli_free_result($result);
+    mysqli_close($con);
+\Stripe\Stripe::setApiKey($val);
+$pricetag = 0;
+foreach ( $_SESSION["cart"] as $product ) {
+$con=mysqli_connect($hostname,$usename,$password,$database);
+$sql="SELECT * FROM Items WHERE id = '" . $product. "'";
+
+if ($result=mysqli_query($con,$sql))
+  {
+  // Fetch one and one row
+  while ($row=mysqli_fetch_row($result))
+    {
+  $pricetag += $row[2];
+    }
+  // Free result set
+  mysqli_free_result($result);
+}
+
+mysqli_close($con);
+}
+$cost =  preg_replace('/[^A-Za-z0-9\-]/', '', $pricetag);
+
+$myCard = array('number' => $_POST["number"], 'exp_month' => $_POST["month"], 'exp_year' => $_POST["year"]);
+$charge = \Stripe\Charge::create(array('card' => $myCard, 'amount' => $cost, 'currency' => 'usd'));
+} catch (Exception $e) {
+$message = urlencode($e->getMessage());
+header("Location: ?pay&error=" . $message);
+die();
+}
  $cartitems = $_SESSION["cart"];
  $_SESSION["cart"] = array();
  $items = "";
@@ -29,7 +67,7 @@ if ($result=mysqli_query($con,$sql))
     {
   
    $conn=mysqli_connect($hostname,$usename,$password,$database);
- $sql = "INSERT INTO Orders (id, email, products) VALUES ('" . rand(1000,9999) . "', 'noaddress@outlook.com', '" . $row[1] . "')";
+ $sql = "INSERT INTO Orders (id, email, products) VALUES ('" . rand(1000,9999) . "','" .  $_POST["email"] . "', '" . $row[1] . "')";
 $conn->query($sql);
     }
   // Free result set
@@ -44,6 +82,7 @@ mysqli_close($con);
 }
 if (isset($_GET["pay"]))
 {
+  if (isset($_GET["error"])){ echo '<div class="alert alert-danger">' . $_GET[error] . "</div>";}
   ?>
   <center> <div class="table-responsive">          
   <table class="table">
@@ -86,7 +125,12 @@ mysqli_close($con);
   </div>
   </div>
 </center>
-<a href="?nowcharged" class="btn btn-info" role="button">Pay <?php
+<form method="POST" action="?nowcharged">
+<input type="hidden" name="credit" value="true">
+Email:<input type="email" name="email" required="true" placeholder=""/><br>
+Card Number:<input type="number" name="number" required="true" placeholder="XXXXXXXXXXXXXXXX" max="9999999999999999"/><br>
+Expires:<input  type="number" name="month" required="true" max="99" placeholder="XX"/>/<input type="number" name="year" required="true" max="99" placeholder="XX"/>
+<input type="submit" class="btn btn-info" value="Pay <?php
 $pricetag = 0;
 foreach ( $_SESSION["cart"] as $product ) {
 $con=mysqli_connect($hostname,$usename,$password,$database);
@@ -105,14 +149,16 @@ if ($result=mysqli_query($con,$sql))
 
 mysqli_close($con);
 }
-echo money_format('$%i',$pricetag) . "<br>";
-?></a>
+echo money_format('$%i',$pricetag);
+?>">
+</form>
+
 
   <?php
   include("theme/footer.php");
 die();
 }
-if (isset($_GET["clean"])) {
+if (isset($_GET["clean"]) || !isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
 if (isset($_GET["addtocart"]))

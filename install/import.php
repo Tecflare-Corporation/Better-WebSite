@@ -77,6 +77,8 @@ $conn->query($sql);
 $conn->query($sql);
 $sql = "INSERT INTO Settings (id, code, value) VALUES ('4', 'mail','noemail@gmail.com')";
 $conn->query($sql);
+$sql = "INSERT INTO Settings (id, code, value) VALUES ('5', 'api','')";
+$conn->query($sql);
 $conn->close();
 //$licence_key = rand(10000,99999) ."-" . rand(10000,99999) ."-" . rand(10000,99999) ."-" . rand(10000,99999) ."-" . rand(10000,99999);
 //$test = file_get_contents("http://www.tecflare.com/multisite/?cmd=add&serial=" . $licence_key);

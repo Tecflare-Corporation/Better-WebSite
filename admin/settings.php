@@ -32,6 +32,7 @@ $result=mysqli_query($con,$sql);
     if ($row[1] == "title") $nami="Site Title";
     if ($row[1] == "mail") $nami="Email";
     if ($row[1] == "theme") $nami="Site Theme";
+    if ($row[1] == "api") $nami="Stripe Api Key";
     if ($row[1] == "maintainanceMode") 
     {
         if ($row[2] == "on") $fami = "checked";

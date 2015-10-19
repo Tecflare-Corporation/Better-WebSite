@@ -6,7 +6,18 @@ if (isset($_SESSION["usename"])) include("theme/admin.php");
 ?>
 <center>
 <div class="page-header">
-  <h1>Select a Site<small></small></h1>
+  <h1>Welcome to <?php
+$con=mysqli_connect($hostname,$usename, $password, $database);
+$sql="SELECT id,code,value FROM Settings";
+$result=mysqli_query($con,$sql);
+ while ($row=mysqli_fetch_row($result))
+    {
+     if ($row[0] == 1) echo $row[2];
+     if ($row[0] == 2 && $row[2] == "on") $err = "yes";
+    }
+   mysqli_free_result($result);
+    mysqli_close($con);
+    ?><small></small></h1>
 </div>
 </center>
 <div class="container">
