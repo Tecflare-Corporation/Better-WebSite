@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(0);
  if (empty($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
@@ -12,7 +13,12 @@ include("config.php");
 session_start();
 if (isset($_GET["nowcharged"]))
 {
-  
+ if($_SESSION["security_code"] != $_POST["captcha"])
+ {
+   $mess = "Captcha%20Error";
+   header("Location: ?pay&error=" . $mess);
+   die();
+ }
  require_once('stripe/init.php');
 try{
 $con=mysqli_connect($hostname,$usename, $password, $database);
@@ -130,6 +136,8 @@ mysqli_close($con);
 Email:<input type="email" name="email" required="true" placeholder=""/><br>
 Card Number:<input type="number" name="number" required="true" placeholder="XXXXXXXXXXXXXXXX" max="9999999999999999"/><br>
 Expires:<input  type="number" name="month" required="true" max="99" placeholder="XX"/>/<input type="number" name="year" required="true" max="99" placeholder="XX"/>
+<br><img src="captcha/image.php"><Br>
+Captcha:<input  type="text" name="captcha" required="true" ><Br>
 <input type="submit" class="btn btn-info" value="Pay <?php
 $pricetag = 0;
 foreach ( $_SESSION["cart"] as $product ) {

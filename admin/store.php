@@ -15,6 +15,7 @@ if (!isset($_GET["n"]))
   <table class="table">
     <thead>
       <tr>
+        <th>Delete</th>
         <th>Product Name</th>
         <th>Cost</th>
       </tr>
@@ -31,6 +32,7 @@ if ($result=mysqli_query($con,$sql))
     {
     echo '
           <tr>
+             <td><a href="delpro.php?item=' . urlencode($row[0]) . '">Delete</a></td>
         <td>' .$row[1] . '</td>
         <td>' . $row[2] . '</td>
       </tr>
@@ -65,6 +67,7 @@ if ($result=mysqli_query($con,$sql))
     {
     echo '
           <tr>
+       
         <td>' .$row[0] . '</td>
         <td>' . $row[1] . '</td>
         <td>' . $row[2] . '</td>
