@@ -24,7 +24,7 @@ function create_image()
     $image = ImageCreate($width, $height);  
 
     //We are making three colors, white, black and gray
-    $white = ImageColorAllocate($image, 255, 255, 255);
+    $white = ImageColorAllocate($image, 0, 255, 0);
     $black = ImageColorAllocate($image, 0, 0, 0);
     $grey = ImageColorAllocate($image, 204, 204, 204);
 
