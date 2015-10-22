@@ -55,9 +55,14 @@ Copyright (c) Tecflare Corporation All rights Reserved
 -Added Support for footer
 -Added API
 
-## [0.0.5] [Preview] [Unreleased]
+## [0.0.5] [Preview] [released]
 ### Changed
 
 -Added Pages
 -Changed Login Screen
 -Added Stripe Payment Gateway
+
+## [0.0.6] [Preview] [Unreleased]
+### Changed
+
+-Added Themes

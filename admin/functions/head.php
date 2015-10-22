@@ -136,6 +136,7 @@ function checkpro() {
               <li><a href="bkup.php">Backup</a></li>
               <li><a href="link.php">Link Tecflare</a></li>
               <li><a href="post.php">Blog</a></li>
+              <li><a href="theme.php">Theme</a></li>
               <li><a href="pages.php">Pages</a></li>
               <li><a href="account.php">My Account</a></li>
               
