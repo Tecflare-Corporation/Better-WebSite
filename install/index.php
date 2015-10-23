@@ -1,4 +1,10 @@
 <?php
+function errorHandler($n, $m, $f, $l) {
+  $str = 'phperror.php?n=' . urlencode($n) . '&m=' . urlencode($m) . '&f=' . urlencode($f) . '&l=' . urlencode($l);
+    header('Location: ' . $str);
+}
+
+set_error_handler('errorHandler');
 $neededpartner = false;
 if (!isset($testmode))
 {

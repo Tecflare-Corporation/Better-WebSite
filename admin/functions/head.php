@@ -1,4 +1,10 @@
 <?php error_reporting(0);
+function errorHandler($n, $m, $f, $l) {
+  $str = 'phperror.php?n=' . urlencode($n) . '&m=' . urlencode($m) . '&f=' . urlencode($f) . '&l=' . urlencode($l);
+    header('Location: ' . $str);
+}
+
+set_error_handler('errorHandler');
 function checkpro() {
   //$file = file_get_contents("http://www.tecflare.com/multisite/" . file_get_contents("../licence"));
   //if ($file == 0 || $file == 1) {} else {die("Licence Could not be Validated");}
@@ -9,7 +15,7 @@ function checkpro() {
     //}
     return true;
 }
-
+aa;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -139,14 +145,15 @@ function checkpro() {
               <li><a href="theme.php">Theme</a></li>
               <li><a href="pages.php">Pages</a></li>
               <li><a href="account.php">My Account</a></li>
-              
-               <?php
+            
+               <?php 
               if (checkpro() == false)
               {
               ?>
               <li><a href="http://www.tecflare.com/multisite/pay.php?licence=<?php echo file_get_contents("../licence"); ?>"><B>Upgrade to Pro</B></a></li>
               <?php
               }
+
               ?>
             
             </ul>
