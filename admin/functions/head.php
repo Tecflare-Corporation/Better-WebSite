@@ -15,7 +15,7 @@ function checkpro() {
     //}
     return true;
 }
-aa;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
