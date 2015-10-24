@@ -49,7 +49,7 @@ myfunc() {
         exit 2;
     fi
     }
-    myfunc 'Error' $OUTPUT
+    myfunc 'Php Error' $OUTPUT
     
     echo "Success Command Completed Successfully."
     exit 0;

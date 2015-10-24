@@ -40,10 +40,6 @@
 });
   </script>
 
-				<?php
-				} catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
-}
-				?>
+		
   </body>
 </html> 

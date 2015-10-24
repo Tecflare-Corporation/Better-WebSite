@@ -150,7 +150,7 @@ elseif($_GET["page"] == 2)
   <strong>Waning!</strong> Database will be edited.
 </div>
 ';
-if ($_GET["error"] == 1)
+if (isset($_GET["error"]) && $_GET["error"] == 1)
 {
   ?>
  <div class="alert alert-danger" role="alert">
@@ -196,7 +196,7 @@ elseif ($_GET["page"] == 3 && file_exists("../config.php"))
 <div class="container">
     <p>
         <?php
-        if ($_GET["error"] == 9)
+        if (isset($_GET["error"]) &&$_GET["error"] == 9)
 {
   ?>
  <div class="alert alert-danger" role="alert">
