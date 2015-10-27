@@ -68,6 +68,7 @@ $result=mysqli_query($con,$sql);
   <li><a href="index.php">Home</a></li>
   <li> <a href="store.php"  role="button">Store</a></li>
   <li> <a href="blog.php" role="button">Blog</a></li>
+  <li> <a href="tiles.php" role="button">Images</a></li>
    <?php
 $con=mysqli_connect($hostname,$usename,$password,$database);
 $sql="SELECT * FROM Pages";

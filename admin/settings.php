@@ -74,6 +74,7 @@ $result=mysqli_query($con,$sql);
 </div></form>
 <br>
 <a href="edit.php?imi=style/bootstrap.min.css">Edit Style</a>
+<a href="rmcache.php">Delete Cache Folder</a>
 <a href="edit.php?imi=javascript/bootstrap.min.js">Edit Javascript</a>
 <?php
 include("functions/footer.php");
