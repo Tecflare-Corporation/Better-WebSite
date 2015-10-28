@@ -28,7 +28,9 @@ function mc_decrypt($decrypt, $key){
 if (isset($_GET["a"]))
 {
     include("config.php");
-    $con=mysqli_connect($hostname,$usename,$password,$database);
+   
+ 
+$con=mysqli_connect($hostname,$usename,$password,$database);
 $sql="SELECT * FROM Storage";
 
 if ($result=mysqli_query($con,$sql))
@@ -36,23 +38,25 @@ if ($result=mysqli_query($con,$sql))
   // Fetch one and one row
   while ($row=mysqli_fetch_row($result))
     {
-        if ($_GET["a"] = $row[1])
-        {
-        
-       $image =  mc_decrypt($row[2],$key);
-     $fp = fopen("memory/" . mc_decrypt($_GET["a"],$key), 'w');
-fwrite($fp, $image);
-fclose($fp);
-
+   if ($_GET["a"] == mc_decrypt($row[1],$key))
+   {
+       if (strpos($_GET["a"],'bmp') !== false) {
+    $header = "image/bmp";
 }
-
+      header('Content-Type: application/octet-stream');
+header("Content-Transfer-Encoding: Binary"); 
+header("Content-disposition: attachment; filename=\"" . $_GET["a"] . "\""); 
+echo mc_decrypt($row[2],$key);
+   }
     }
   // Free result set
   mysqli_free_result($result);
 }
 
 mysqli_close($con);
-    die();
+
+    
+die();
 }
 if (!isset($testmode))
 {
@@ -94,28 +98,15 @@ if ($result=mysqli_query($con,$sql))
   // Fetch one and one row
   while ($row=mysqli_fetch_row($result))
     {
-        ?>
-    
-        <?php
-      echo "<img style='display: none;' src='?a=" . urlencode(mc_decrypt($row[1],$key)) . "'>";
-      ?>
-      
-      <?php
-        if(!@!is_array(getimagesize("memory/" . mc_decrypt($row[1],$key)))){
         echo '
-     <div class="item">
+       <div class="item">
       <div class="well"> 
-      <img style="width: 100%;" src="' . "memory/" . mc_decrypt($row[1],$key) . '">
+      <h4>' . mc_decrypt($row[1],$key) . '</h4><br><a href="?a=' . mc_decrypt($row[1],$key) . '">Download Now</a>
        
       </div>
     </div>
-    ';
-    unlink("memory/" . mc_decrypt($row[1],$key));
-} 
-else {
-unlink("memory/" . mc_decrypt($row[1],$key));
-}
 
+    ';
     }
   // Free result set
   mysqli_free_result($result);
