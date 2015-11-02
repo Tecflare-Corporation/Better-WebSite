@@ -1,4 +1,5 @@
 <?php
+include("functions/checkLogin.php");
 $stylefile = "../styles/" . $_POST["theme"];
 
 $a = fopen("style/bootstrapsite.theme.css", 'w');

@@ -1,5 +1,5 @@
 <?php
-//include("functions/checkLogin.php");
+include("functions/checkLogin.php");
 include("../config.php");
 include("functions/head.php");
 ?>

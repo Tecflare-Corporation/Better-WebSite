@@ -1,4 +1,5 @@
 <?php
+include("functions/checkLogin.php");
 error_reporting(0);
 $file="apilibrary.php";
 if (file_exists($file) && isset($_GET["install"])) {

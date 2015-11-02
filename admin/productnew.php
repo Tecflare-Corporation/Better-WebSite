@@ -1,4 +1,5 @@
 <?php
+include("functions/checkLogin.php");
 include("../config.php");
 $conn = new mysqli($hostname, $usename, $password, $database);
 // sql to create table

@@ -1,4 +1,5 @@
 <?php
+include("functions/checkLogin.php");
 $partnerid = $_POST["partner"];
 $pp = file_get_contents("http://partners.tecflare.com/api/index.php?appid=" . $partnerid . "&command=genvkey&value=testaccount");
 if ($pp == '"testaccount[vkey-:5ebbe:-vkey]"')

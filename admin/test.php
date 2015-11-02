@@ -1,4 +1,5 @@
 <?php
+include("functions/checkLogin.php");
 include("functions/head.php");
 ?>
 <div class="row">
