@@ -80,24 +80,51 @@
       stream.eatWhile(/[\w\$_\xa1-\uffff]/);
       var cur = stream.current();
 
-      if (keywords.propertyIsEnumerable(cur)) return "keyword";
-      if (builtin.propertyIsEnumerable(cur)) return "builtin";
+      if (keywords.propertyIsEnumerable(cur)) {
+        return "keyword";
+      }
+      if (builtin.propertyIsEnumerable(cur)) {
+      return "builtin";
+}
+      if (timerOps.propertyIsEnumerable(cur)) {
+        return "def timerOps";
+      }
+      if (configOps.propertyIsEnumerable(cur)) {
+        return "def configOps";
+      }
+      if (verdictOps.propertyIsEnumerable(cur)) {
+        return "def verdictOps";
+      }
+      if (portOps.propertyIsEnumerable(cur)) {
+        return "def portOps";
+      }
+      if (sutOps.propertyIsEnumerable(cur)) {
+        return "def sutOps";
+      }
+      if (functionOps.propertyIsEnumerable(cur)) {
+        return "def functionOps";
+      }
 
-      if (timerOps.propertyIsEnumerable(cur)) return "def timerOps";
-      if (configOps.propertyIsEnumerable(cur)) return "def configOps";
-      if (verdictOps.propertyIsEnumerable(cur)) return "def verdictOps";
-      if (portOps.propertyIsEnumerable(cur)) return "def portOps";
-      if (sutOps.propertyIsEnumerable(cur)) return "def sutOps";
-      if (functionOps.propertyIsEnumerable(cur)) return "def functionOps";
-
-      if (verdictConsts.propertyIsEnumerable(cur)) return "string verdictConsts";
-      if (booleanConsts.propertyIsEnumerable(cur)) return "string booleanConsts";
-      if (otherConsts.propertyIsEnumerable(cur)) return "string otherConsts";
-
-      if (types.propertyIsEnumerable(cur)) return "builtin types";
+      if (verdictConsts.propertyIsEnumerable(cur)) {
+        return "string verdictConsts";
+      }
+      if (booleanConsts.propertyIsEnumerable(cur)) {
+        return "string booleanConsts";
+      }
+      if (otherConsts.propertyIsEnumerable(cur)) { 
+        return "string otherConsts";
+}
+      if (types.propertyIsEnumerable(cur)) 
+      {
+        return "builtin types";
+      }
       if (visibilityModifiers.propertyIsEnumerable(cur))
+      {
         return "builtin visibilityModifiers";
-      if (templateMatch.propertyIsEnumerable(cur)) return "atom templateMatch";
+      }
+      if (templateMatch.propertyIsEnumerable(cur)) { 
+        return "atom templateMatch";
+      }
 
       return "variable";
     }
