@@ -1,4 +1,5 @@
 <?php
+//it
 include("config.php");
 if (!isset($testmode))
 {
