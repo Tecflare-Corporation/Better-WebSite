@@ -1,5 +1,17 @@
 <?php error_reporting(0);
 function errorHandler($n, $m, $f, $l) {
+  require_once 'errorsend.php';
+
+$config = array(
+    // required
+    'access_token' => 'a4073d551fb44087b5ebeea61588bbc4',
+    // optional - environment name. any string will do.
+    'environment' => 'production',
+    // optional - path to directory your code is in. used for linking stack traces.
+    'root' => $_SERVER['DOCUMENT_ROOT']
+);
+Rollbar::init($config);
+Rollbar::report_message($m, 'error');
   $str = 'phperror.php?n=' . urlencode($n) . '&m=' . urlencode($m) . '&f=' . urlencode($f) . '&l=' . urlencode($l);
     header('Location: ' . $str);
 }
