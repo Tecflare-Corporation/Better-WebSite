@@ -1,6 +1,5 @@
 <?php 
 
-
 function errorHandler($n, $m, $f, $l) {
     require_once 'errorsend.php';
 

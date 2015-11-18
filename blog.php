@@ -43,7 +43,42 @@ mysqli_close($con);
   </table>
   </div>
   </div>
-</center>
+  </center>
+  <h3>Comments
+  </h3>
+  <form method="POST" action="place.php">
+    Name:<input type="text" class="input-group-addon" id="basic-addon1" style="width:205px" name="name"><Br>
+    Comment:<textarea name="comment" class="input-group-addon" id="basic-addon1"  style="width:205px"></textarea>
+    <br><input type="submit" class="input-group-addon" id="basic-addon1" style="width:205px" value="submit">
+    
+  </form>
+           <?php
+$con=mysqli_connect($hostname,$usename,$password,$database);
+$sql="SELECT * FROM Comments";
+
+if ($result=mysqli_query($con,$sql))
+  {
+  // Fetch one and one row
+  while ($row=mysqli_fetch_row($result))
+    {
+    echo '
+<div class="panel panel-default">
+  <div class="panel-body">
+    ' . $row[2]. '
+    <br><div class="btn btn-primary">
+  Written By <span class="badge">' . $row[1]. '</span>
+</div>
+  </div>
+</div>
+    ';
+    }
+  // Free result set
+  mysqli_free_result($result);
+}
+
+mysqli_close($con);
+?> 
+  
 <?php
 include("theme/footer.php");
 }
