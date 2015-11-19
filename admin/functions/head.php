@@ -156,6 +156,7 @@ function checkpro() {
               <li><a href="post.php">Blog</a></li>
               <li><a href="theme.php">Theme</a></li>
               <li><a href="pages.php">Pages</a></li>
+              <li><a href="users.php">Manage Accounts</a></li>
               <li><a href="account.php">My Account</a></li>
             
                <?php 
