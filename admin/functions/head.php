@@ -36,6 +36,7 @@ function checkpro() {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tecflare Multisite</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link href="style/bootstrap.min.css" rel="stylesheet">
   <link href="style/bootstrap.theme.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -51,6 +52,7 @@ function checkpro() {
   <script src="syn/addon/fold/comment-fold.js"></script>
   <script src="syn/mode/javascript/javascript.js"></script>
   <script src="syn/mode/xml/xml.js"></script>
+  
   <?php 
   if (!isset($nowdisable))
   {
@@ -132,6 +134,7 @@ function checkpro() {
               <li class="active"><a href="cp.php">Dashboard</a></li>
               <li><a href="settings.php">System Settings</a></li>
               <?php
+            
               if (checkpro() == true)
               {
               ?>
@@ -139,6 +142,7 @@ function checkpro() {
               <?php
               }
               ?>
+              <li><a href="plugins.php">Plugins</a></li>
               <li><a href="api.php">API</a></li>
               <li><a href="store.php">Store</a></li>
               <li><a href="cloudfile.php">Storage</a></li>
@@ -166,7 +170,11 @@ function checkpro() {
               <li><a href="http://www.tecflare.com/multisite/pay.php?licence=<?php echo file_get_contents("../licence"); ?>"><B>Upgrade to Pro</B></a></li>
               <?php
               }
-
+              error_reporting(E_ALL); include "engine/init.php"; 
+              $menys = return_menu();
+foreach($menys as $option) {
+  echo '<li><a href="plugins.php?opt=' . $option . '">' . $option . '</a>';
+}
               ?>
             
             </ul>

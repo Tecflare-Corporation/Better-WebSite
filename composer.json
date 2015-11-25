@@ -1,0 +1,15 @@
+{
+    "name": "Tecflare-Corporation/mSite",
+    "description": "Make Awesome Websites.",
+    "version": "8.0.0",
+    "type": "library",
+    "keywords": ["logging", "cool", "awesome"],
+    "homepage": "http://www.tecflare.com",
+    "license": "MIT",
+    "support": {
+        "email": "dodiaraculus@outlook.com",
+        "issues": "https://github.com/Tecflare-Corporation/mSite/issues",
+        "irc": "irc://dodiaraculus.ddns.net",
+        "source": "https://github.com/Tecflare-Corporation/mSite",
+    },
+}

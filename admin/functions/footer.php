@@ -5,7 +5,7 @@
   </div>
 </footer>
     <script src="javascript/bootstrap.min.js"></script>
-    <script src="javascript/jquery.js"></script>
+    
   <script>
     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
       lineNumbers: true,

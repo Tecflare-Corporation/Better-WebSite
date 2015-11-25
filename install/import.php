@@ -71,6 +71,12 @@ name VARCHAR(99999),
 about TEXT
 )";
 $conn->query($sql);
+ $sql = "CREATE TABLE Plugins (
+filename varchar(127) collate utf8_bin default NULL,
+		action tinyint(1) default '0',
+		PRIMARY KEY  (`filename`)
+)";
+$conn->query($sql);
 $sql = "INSERT INTO Administrators (id, usename, password) VALUES ('1', '" . $conn->real_escape_string(addslashes($_POST["usename"]))."', '" .md5($conn->real_escape_string($_POST["password"]))."')";
 $conn->query($sql);
 $sql = "INSERT INTO Settings (id, code, value) VALUES ('1', 'title','Multisite Central')";

@@ -81,6 +81,7 @@ include("checkblk.php");
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php
 $con=mysqli_connect($hostname,$usename, $password, $database);
