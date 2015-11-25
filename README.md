@@ -49,6 +49,7 @@ And of course Tecflare Multisite itself is open source on GitHub.
 
 Want to contribute? Great!
 
+Help us on https://salt.bountysource.com/teams/tecflare
 
 
 
