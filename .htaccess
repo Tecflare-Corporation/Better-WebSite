@@ -1,2 +1,8 @@
 ErrorDocument 404 /read.php?error=404
 ErrorDocument 403 /read.php?error=403
+# supress php errors
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+php_value docref_root 0
+php_value docref_ext 0

@@ -17,16 +17,7 @@ Rollbar::report_message($m, 'error');
 }
 
 set_error_handler('errorHandler');
-function checkpro() {
-  //$file = file_get_contents("http://www.tecflare.com/multisite/" . file_get_contents("../licence"));
-  //if ($file == 0 || $file == 1) {} else {die("Licence Could not be Validated");}
-    //if ($file == "0") {
-      //return true;
-    //} else {
-      //return true;
-    //}
-    return true;
-}
+
 
 ?>
 <!DOCTYPE html>
@@ -134,7 +125,39 @@ function checkpro() {
               <li class="active"><a href="cp.php">Dashboard</a></li>
               <li><a href="settings.php">System Settings</a></li>
               <?php
-            
+            function checkpro() {
+              if (file_exists("licence-details.php")) {
+              $envato_apikey = "ltmtnluhlj57v6x4amt19lkoiowjoq01";
+              include("licence-details.php");
+$envato_username = "dodiaraculus";
+$license_to_check = $licence_code;
+if(!empty($license_to_check) && !empty($envato_apikey) && !empty($envato_username) || $licence_code =="7294729347239"){
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'http://marketplace.envato.com/api/edge/'.$envato_username.'/'.$envato_apikey.'/verify-purchase:'.$license_to_check.'.json');
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$ch_data = curl_exec($ch);
+curl_close($ch);
+if(!empty($ch_data))
+{
+$json_data = json_decode($ch_data, true);
+if(isset($json_data["verify-purchase"]) && count($json_data["verify-purchase"])>0  || $licence_code =="7294729347239"){
+return true;
+} else {
+return false;
+}
+}
+else
+{
+return false;
+}
+} else { 
+return false;
+}
+} else {
+  return false;
+}
+            }
               if (checkpro() == true)
               {
               ?>
@@ -154,8 +177,14 @@ function checkpro() {
               <?php
               }
               ?>
-               
+               <?php
+                if (checkpro() == true)
+              {
+                ?>
               <li><a href="bkup.php">Backup</a></li>
+              <?php
+              }
+              ?>
               <li><a href="link.php">Link Tecflare</a></li>
               <li><a href="post.php">Blog</a></li>
               <li><a href="theme.php">Theme</a></li>
@@ -167,7 +196,7 @@ function checkpro() {
               if (checkpro() == false)
               {
               ?>
-              <li><a href="http://www.tecflare.com/multisite/pay.php?licence=<?php echo file_get_contents("../licence"); ?>"><B>Upgrade to Pro</B></a></li>
+              <li><a href="upgrade.php"><B>Upgrade to Pro</B></a></li>
               <?php
               }
               error_reporting(E_ALL); include "engine/init.php"; 

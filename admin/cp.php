@@ -2,6 +2,7 @@
 include("functions/checkLogin.php");
 include("../config.php");
 include("functions/head.php");
+error_reporting(0);
 ?>
 <div class="page-header">
 <h1>Dashboard</h1>
