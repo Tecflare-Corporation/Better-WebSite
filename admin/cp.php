@@ -7,6 +7,7 @@ error_reporting(0);
 <div class="page-header">
 <h1>Dashboard</h1>
 </div>
+<div class="alert alert-waning" role="alert">Waning! This script will not have updates. We are moving to poKe. We are sorry for this inconvinence but we are moving.</div>
 <div class="row">
 <?php
 $con=mysqli_connect($hostname,$usename, $password, $database);
