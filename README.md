@@ -12,7 +12,7 @@ Tecflare Multisite is a professional webpage system like wordpress.
 
 Website:http://tecflare-corporation.github.io/mSite
 
-###Testing 
+### Testing 
 
 Preview Frontend:http://mymultisite.x10.mx/
 
@@ -20,14 +20,14 @@ Preview Backend:http://mymultisite.x10.mx/admin/
 
 - Username: test
 - Password: test
-###Using
+### Using
 
   - Easy
   - Simple
   - Secure
   - Magic
 
-###Important
+### Important
 The Partner id to use this script is Techcodingluv
 
 >Easy to use and Requires Minimal Knowledge.
