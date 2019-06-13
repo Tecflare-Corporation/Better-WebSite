@@ -6,6 +6,7 @@
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Tecflare-Corporation/mSite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Build Status](https://travis-ci.org/Tecflare-Corporation/mSite.svg?branch=master)](https://travis-ci.org/Tecflare-Corporation/mSite)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/80d424e7f98749549cc314b4fc827abd)](https://www.codacy.com/app/dodiaraculus/mSite)
+[![Open Source Helpers](https://www.codetriage.com/tecflare-corporation/easy-large-websites/badges/users.svg)](https://www.codetriage.com/tecflare-corporation/easy-large-websites)
 
 
 Tecflare Multisite is a professional webpage system like wordpress.
